@@ -20,8 +20,9 @@ from catalogo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('catalogo/', include('catalogo.urls')),
 ]
 
 urlpatterns = [
-    path('', HomeView.as_view(), name='home'),	
+    path('', views.home, name='catalogo_home'),	
 ]
