@@ -4,4 +4,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return render(request, 'catalogo/home.html')
+    context = {
+        'titulo': 'Bienvenido a la App Catálogo',
+        'descripcion': 'Esta es la página principal de la aplicación Catálogo.',
+        'items': ['Item 1', 'Item 2', 'Item 3'], 
+    }
+    return render(request, 'catalogo/home.html', context)
