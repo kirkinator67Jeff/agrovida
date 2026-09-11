@@ -1,12 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
-from django.http import HttpResponse
-
-def home(request):
-    context = {
-        'titulo': 'Bienvenido a la App Catálogo',
-        'descripcion': 'Esta es la página principal de la aplicación Catálogo.',
-        'items': ['Item 1', 'Item 2', 'Item 3'], 
-    }
-    return render(request, 'catalogo/home.html', context)
+def mostrar_productos(request):
+    productos = [
+        {'nombre': 'Producto 1', 'precio': 10.99},
+        {'nombre': 'Producto 2', 'precio': 15.49},
+        {'nombre': 'Producto 3', 'precio': 7.99},
+    ]
+    return render(request, 'catalogo/index.html', {'productos': productos})
